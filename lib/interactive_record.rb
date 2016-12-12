@@ -56,7 +56,7 @@ class InteractiveRecord
   end
 
   def self.find_by(data)
-    sql = "SELECT * FROM #{self.table_name} WHERE #{data.keys[0]} LIKE '#{data.values[0]}'"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{data.keys[0]} LIKE #{data.values[0]}"
     DB[:conn].execute(sql)
   end
 
